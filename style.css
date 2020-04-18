@@ -1,3 +1,9 @@
 .carousel-item {
     height: 400px;
 }
+
+#slideShow {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

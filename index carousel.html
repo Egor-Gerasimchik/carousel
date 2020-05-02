@@ -29,6 +29,8 @@
 
                 <a class="nav-link" href="#cards">Перейти на карточки</a>
 
+                <a class="nav-link" href="#animal">Перейти на заполнение информации о своём животном</a>
+
             </li>
 
             <li class="nav-item">
@@ -252,7 +254,91 @@
             </script>
         </div>
     </div>
+    <form id="form1">
+        <div>
+            <div id="animal"></div>
+            Введите сюда имя своего животного.
+            <input type="text" name="name" class="form-control" id="simpleTextID" placeholder="Имя животного">
 
+            Выбери возраст животного
+            <select class="form-control" id="oneOptionCheck" name="age">
+                <option>0 - 3</option>
+                <option>3 - 4</option>
+                <option>4 - 6</option>
+                <option>6 - 9</option>
+                <option>9 - 15</option>
+            </select>
+
+
+
+            Есть ли у вас животное, если да то введите информацию о нём<textarea class="form-control" id="textAreaID1"
+                rows="4" name="description"></textarea>
+
+            Введите сюда какого вида ваше животное<textarea name="animalVid" class="form-control" id="textAreaID2"
+                rows="3"></textarea>
+
+            Введите сюда какой породы ваше животное<textarea name="animalPoroda" class="form-control" id="textAreaID3"
+                rows="3">
+        </textarea>
+
+            Введите сюда что-нибудь ещё о своём животном<textarea class="form-control" id="textAreaID4" rows="3"
+                name="addInfo"></textarea>
+        </div>
+
+        <div class="form-group">
+            Выберите цвет шерсти, если она имеется
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="colour" id="exampleRadios1" value="белый" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Белый
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="colour" id="exampleRadios2" value="Чёрный">
+                <label class="form-check-label" for="exampleRadios2">
+                    Чёрный
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="colour" id="exampleRadios3" value="Другой цвет">
+                <label class="form-check-label" for="exampleRadios3">
+                    Другой цвет
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="colour" id="exampleRadios4" value="Нету шерсти">
+                <label class="form-check-label" for="exampleRadios4">
+                    Нету шерсти
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFromControlFile1">Загрузите фото животного, если желаете</label>
+            <input type="file" name="photo" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <script>
+            function sendData2log() {
+                console.clear();
+                console.log('Имя:' + $('#simpleTextID').val());
+                console.log('Возраст животного:' + $('#oneOptionCheck').val());
+                console.log('цвет шерсти:' + $('[name=colour]:checked').val());
+                console.log('Есть ли животное:' + $('#textAreaID1').val());
+                console.log('Вид животного:' + $('#textAreaID2').val());
+                console.log('Порода животного:' + $('#textAreaID3').val());
+                console.log('Дополнительная информация о животном:' + $('#textAreaID4').val());
+                return false;
+            }
+        </script>
+
+
+        <div>
+            <button id="sendData" onclick="return sendData2log()" class=" btn btn-primary">Отправить</button>
+        </div>
+    </form>
 </body>
 
 </html>
